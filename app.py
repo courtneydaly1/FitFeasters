@@ -10,7 +10,9 @@ from models import db, connect_db, User, Recipes
 
 
 CURR_USER_KEY = "curr_user"
-API_KEY = '43cb4f5704da4cfe9d4d261fbb40c746'
+API_KEY = os.environ.get('API_KEY','glhgwjhbvwblblw')
+
+
 BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch'
 
 app = Flask(__name__)
@@ -20,7 +22,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://default:XDtSO0Ma3rpv@ep-yellow-boat-a4lryrfg.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'localhost')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'food4thesoul')
 
 
