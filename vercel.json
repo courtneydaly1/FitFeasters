@@ -1,5 +1,15 @@
-{
-  "installCommand": "pip install -r requirements.txt && echo \"hello courtney\" "
 
- 
+{
+  "builds": [
+      {
+          "src": "app.py",
+          "use": "@vercel/python"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "app.py"
+      }
+  ]
 }

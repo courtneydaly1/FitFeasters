@@ -20,8 +20,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql:///fitfeasters_db')
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'food4thesoul')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://default:XDtSO0Ma3rpv@ep-yellow-boat-a4lryrfg.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require')
+# app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'food4thesoul')
 
 
 # Debug toolbar
