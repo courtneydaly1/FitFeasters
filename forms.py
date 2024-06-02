@@ -7,6 +7,9 @@ from flask_wtf import FlaskForm
 
 class LoginForm(FlaskForm):
     """Login form."""
+    
+    class Meta:
+        csrf = False
 
     username = StringField(
         "Username",
@@ -21,6 +24,9 @@ class LoginForm(FlaskForm):
 class SignUpForm(FlaskForm):
     """User registration form."""
 
+    class Meta:
+        csrf = False
+        
     username = StringField(
         "Username",
         validators=[InputRequired(), Length(min=6, max=20)],
