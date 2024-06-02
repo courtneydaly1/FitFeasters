@@ -190,7 +190,10 @@ def search():
         query = f'{title}&intolerances={intolerances}&includeIngredients={includeIngredients}'
         endpoint = f'https://api.spoonacular.com/recipes/complexSearch?apiKey={API_KEY}&number=6&query={query}'
         response = requests.get(endpoint)
-      
+        print(endpoint)
+        print(response)
+
+        
         if response.status_code == 200:
             data = response.json()
         
