@@ -53,6 +53,8 @@ class SignUpForm(FlaskForm):
     
 class UserEditForm(FlaskForm):
     """form to edit user"""
+    class Meta:
+        csrf = False
 
     username = StringField('Username', validators=[InputRequired()])
     email = StringField('Email', validators=[InputRequired(), Email()])
@@ -63,11 +65,13 @@ class UserEditForm(FlaskForm):
 
 class DeleteForm(FlaskForm):
     """Delete form -- this form is intentionally blank."""
-
+    class Meta:
+        csrf = False
 
 class SearchForm(FlaskForm):
     """Search for Recipes using API"""
-    
+    class Meta:
+        csrf = False
     title = StringField(
         "Name",
         validators=[InputRequired(), Length(max=45)],
